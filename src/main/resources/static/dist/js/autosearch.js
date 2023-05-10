@@ -121,7 +121,7 @@
                 '<input type="hidden" id="edt_'+(i+1)+'" value="'+edate+'">'+
                 '<input type="hidden" id="amt_'+(i+1)+'" value="">'+
                 '      <div class="card-footer" style="text-align:center">                                                                      '+
-                '          <button class="btn btn-primary" onclick="opencard('+(i+1)+')">Enter</button>                           '+
+                '          <button class="btn btn-primary" onclick="opencard()">Enter</button>                           '+
                 '      </div>                                                                                                                   '+
                 '    </div>                                                                                                                     '+
                 '  </div>                                                                                                                       ';
@@ -138,10 +138,7 @@
         });
   }
   
-  function opencard(ele)
-  {
-	  alert(ele);
-  }
+  
   
   function addActive(x) {
     /*a function to classify an item as "active":*/
@@ -175,4 +172,10 @@
       closeAllLists(e.target);
   });
 }
+
+function opencard()
+  {
+	  //alert("hi");
+	  $("#modal-md").modal("toggle");
+  }
 

@@ -13,7 +13,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="" th:href="@{/plugins/fontawesome-free/css/all.min.css}">
   <link rel="stylesheet" href="" th:href="@{/dist/css/adminlte.min.css}">
   <link rel="stylesheet" href="" th:href="@{/dist/css/autosearch.css}">
-  
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.2/datatables.min.css"/>
 </head>
 <body class="hold-transition sidebar-collapse layout-top-nav">
 <div class="wrapper">
@@ -189,6 +189,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <script src="" th:src="@{../dist/js/autosearch.js}"></script>
 
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.2/datatables.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#example').DataTable();
+        });
+    </script>
+
 <script>
 var selid;
 var value = $("#yourId").val();
@@ -198,6 +205,18 @@ console.log(ids);
 var countries = value.split("_");
 var idss = ids.split("_");
 autocomplete(document.getElementById("myInput"), countries);
+
+function handleCheckboxChange() {
+    if (document.getElementById("myCheckbox").checked) {
+        
+    	$("#tddt").text("2023-05-10");
+    	$("#tdtm").text("17:31");
+    	
+    } else {
+    	$("#tddt").text("");
+    	$("#tdtm").text("");
+    }
+}
 
 </script>
 
@@ -331,8 +350,8 @@ autocomplete(document.getElementById("myInput"), countries);
         <!-- /.modal-dialog -->
       </div>
 
-<div class="modal fade" id="modal-sm">
-        <div class="modal-dialog modal-sm">
+<div class="modal fade" id="modal-md">
+        <div class="modal-dialog modal-md">
           <div class="modal-content">
             <div class="modal-header">
               <h4 class="modal-title">Card 1</h4>
@@ -340,12 +359,47 @@ autocomplete(document.getElementById("myInput"), countries);
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" style="text-align:center;">
               <div>No of Days : <b>10</b></div>
               <div>Date : <b>12-01-2022</b></div>
-              <div class="col-12 row">
-                <div class="col-8" style="margin-left: -3%;">No of days completed : </div>
-                <input type="number" class="form-control col-4" value="5" name="" style="border: none; border-bottom: 1px solid;" />
+              <br>
+              <div class="col-12">
+               <table id="example" class="display">
+        <thead>
+            <tr>
+                <th>Action</th>
+                <th>Date</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input checked type="checkbox"/></td>
+                <td>2023-05-10</td>
+                <td>14:30:00</td>
+            </tr>
+            <tr>
+                <td><input checked type="checkbox"/></td>
+                <td>2023-05-11</td>
+                <td>10:45:00</td>
+            </tr>
+            <tr>
+                <td><input checked type="checkbox"/></td>
+                <td>2023-05-12</td>
+                <td>16:15:00</td>
+            </tr>
+            <tr>
+                <td><input checked type="checkbox"/></td>
+                <td>2023-05-13</td>
+                <td>08:00:00</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" id="myCheckbox" onchange="handleCheckboxChange()"/></td>
+                <td id="tddt"></td>
+                <td id="tdtm"></td>
+            </tr>
+        </tbody>
+    </table>
               </div>
             </div>
             <div class="modal-footer justify-content-between">
