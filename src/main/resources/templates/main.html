@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cure & Cure User Cards | User Card</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet" href="" th:href="@{/plugins/fontawesome-free/css/all.min.css}">
+  <link rel="stylesheet" href="" th:href="@{/dist/css/adminlte.min.css}">
+  <link rel="stylesheet" href="" th:href="@{/dist/css/autosearch.css}">
+  
+</head>
+<body class="hold-transition sidebar-collapse layout-top-nav">
+<div class="wrapper">
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+    <div class="container">
+        <img src="" th:src="@{../dist/img/AdminLTELogo12.png}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-bold">&nbsp;&nbsp;Cure & Care</span>
+      </a>
+
+        <!-- <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> -->
+
+      <div class="collapse navbar-collapse order-3" id="navbarCollapse">
+        <!-- Left navbar links -->
+        <div style="font-weight: bold; text-align:center; width:100%; font-size:20pt;">
+          Digital Card System
+        </div>
+      <!-- Right navbar links -->
+      <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+            <i class="fas fa-sign-out-alt"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- /.navbar -->
+
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0"><small>Digital Card System</small></h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="#">Digital initiatives</a></li>
+              <li class="breadcrumb-item active">Digital Card System</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+      <section class="content">
+      <div class="container-fluid" style="width: 80%;">
+        <div class="row">
+          <!-- left column -->
+          <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Basic Information of User</h3>
+                <!--i class="fa fa-plus-circle" style="float: right; font-size: 16pt; cursor: pointer;"></i-->
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form>
+                <div class="card-body">
+                <br>
+                  <div id='hideMe' style="width:100%; text-align:center; color: green; font-size: 14pt;">
+                  	<b th:text="${message}">
+                  		
+                  	</b>
+                  </div>
+                  <br>
+                  <div class="col-lg-12 col-sm-12 row">
+                  
+                  <div class="form-group col-lg-6 col-sm-12">
+                    <label for="exampleInputEmail1">Name</label>
+                    <input type="text" class="form-control" disabled id="fname" placeholder="Enter Name">
+                    <input type="hidden" class="form-control" disabled id="fid">
+                    <br>
+                    <div class="autocomplete col-lg-12">
+    					<input id="myInput" type="text" name="myCountry" placeholder="names">
+  					</div>
+                  </div>
+                  <div class="form-group col-lg-6 col-sm-12">
+                    <label for="exampleInputPassword1">Age</label>
+                    <input type="text" class="form-control" id="fage" disabled placeholder="Enter Age" >
+                  </div>
+                </div>
+                <div class="col-lg-12 col-sm-12 row">
+                  <div class="form-group col-lg-6 col-sm-12">
+                    <label for="exampleInputEmail1">Sex</label>
+                    <input type="text" class="form-control" id="fsex" disabled placeholder="Enter Sex" >
+                  </div>
+                  <div class="form-group col-lg-6 col-sm-12">
+                    <label for="exampleInputPassword1">Address</label>
+                    <textarea class="form-control" id="faddress" disabled placeholder="Enter Address" ></textarea>
+                  </div>
+                </div>
+                <div class="col-lg-12 col-sm-12 row">
+                  <div class="form-group col-lg-6 col-sm-12">
+                    <label for="exampleInputEmail1">Category</label>
+                    <input type="text" class="form-control" id="fcategory" disabled placeholder="Enter Category" >
+                  </div>
+                  <div class="form-group col-lg-6 col-sm-12">
+                    <label for="exampleInputPassword1">Surgery</label>
+                    <input class="form-control" id="fsurgery" disabled placeholder="Enter Surgery Stat" />
+                  </div>
+                </div>
+                <div class="col-lg-12 col-sm-12 row">
+                  <div class="form-group col-lg-6 col-sm-12">
+                    <label for="exampleInputEmail1">Visit Type</label>
+                    <input type="text" class="form-control" id="fvt" disabled placeholder="Enter Visit" >
+                  </div>
+                  <div class="form-group col-lg-6 col-sm-12">
+                    <label for="exampleInputPassword1">Dr. Name</label>
+                    <input class="form-control" id="fdn" disabled placeholder="Enter Surgery Stat" />
+                  </div>
+                </div>
+                  
+
+                <div class="card-footer" style="text-align:center">
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-lg">Add New User</button>
+                </div>
+              </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Cards of User</h3>
+                <!--i class="fa fa-plus-circle" style="float: right; font-size: 16pt; cursor: pointer;"></i-->
+              </div>
+                <div class="card-body col-lg-12 col-md-12 row" id="cardds" style="text-align:center; align-items: center; justify-content:center;">
+                  
+                </div>
+                <div class="card-footer" style="text-align:center">
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-lg1">Add New Card</button>
+                </div>
+              </div>
+              <input type="hidden" id="yourId" th:value="${names}"/>
+              <input type="hidden" id="yourids" th:value="${ids}"/>
+              <form id="fform" type="hidden" action="fetchCust">
+              	<input type="hidden" id="fformid"/>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+
+<!-- jQuery -->
+<script src="" th:src="@{../plugins/jquery/jquery.min.js}"></script>
+<!-- Bootstrap 4 -->
+<script src="" th:src="@{../plugins/bootstrap/js/bootstrap.bundle.min.js}"></script>
+<!-- AdminLTE App -->
+<script src="" th:src="@{../dist/js/adminlte.min.js}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="" th:src="@{../dist/js/demo.js}"></script>
+
+<script src="" th:src="@{../dist/js/autosearch.js}"></script>
+
+<script>
+var selid;
+var value = $("#yourId").val();
+console.log(value);
+var ids = $("#yourids").val();
+console.log(ids);
+var countries = value.split("_");
+var idss = ids.split("_");
+autocomplete(document.getElementById("myInput"), countries);
+
+</script>
+
+<div class="modal fade" id="modal-lg">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Add New User</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <br>
+            </div>
+            <div class="modal-body">
+              <form method="post" action="savecust">
+                <div class="card-body">
+                  <div class="col-lg-12 col-sm-12 row">
+                  <div class="form-group col-lg-6 col-sm-12">
+                    <label for="exampleInputEmail1">Name</label>
+                    <input type="text" class="form-control" name="name" id="exampleInputEmail1" placeholder="Enter Name">
+                  </div>
+                  <div class="form-group col-lg-6 col-sm-12">
+                    <label for="exampleInputPassword1">Age</label>
+                    <input type="text" class="form-control" name="age" id="exampleInputPassword1" placeholder="Enter Age">
+                  </div>
+                </div>
+                <div class="col-lg-12 col-sm-12 row">
+                  <div class="form-group col-lg-6 col-sm-12">
+                    <label for="exampleInputEmail1">Sex</label>
+                    <select class="form-control" name="sex">
+                    	<option value="M">Male</option>
+                    	<option value="M">Female</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-6 col-sm-12">
+                    <label for="exampleInputPassword1">Address</label>
+                    <textarea class="form-control" name="address" id="exampleInputPassword1" placeholder="Enter Address"></textarea>
+                  </div>
+                </div>
+                <div class="col-lg-12 col-sm-12 row">
+                  <div class="form-group col-lg-6 col-sm-12">
+                    <label for="exampleInputEmail1">Category</label>
+                    <select class="form-control" name="category">
+                    	<option value="Neuro">Neuro</option>
+                    	<option value="Ortho">Ortho</option>
+                    	<option value="Pediatric">Pediatric</option>
+                    	<option value="Fitness">Fitness</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-6 col-sm-12">
+                    <label for="exampleInputPassword1">Surgery</label>
+                    <select class="form-control" name="surgery">
+                    	<option value="Yes">Yes</option>
+                    	<option value="No">No</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-lg-12 col-sm-12 row">
+                  <div class="form-group col-lg-6 col-sm-12">
+                    <label for="exampleInputEmail1">Visit Type</label>
+                    <select class="form-control" name="visit">
+                    	<option value="Clinic Visit">Clinic Visit</option>
+                    	<option value="Home Visit">Home Visit</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-6 col-sm-12">
+                    <label for="exampleInputPassword1">Dr. Name</label>
+                    <input class="form-control" name="drname" id="exampleInputPassword1" placeholder="Enter Surgery Stat"/>
+                  </div>
+                </div>
+                  
+              </div>
+             
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+             </form>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+
+<div class="modal fade" id="modal-lg1">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Add New Card</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form method="post" action="" th:action="@{/savecard}" th:object="${card}">
+                <div class="card-body">
+                  <div class="col-lg-12 col-sm-12 row">
+                  <div class="form-group col-lg-6 col-sm-12">
+                    <label for="exampleInputEmail1">Card No</label>
+                    <input type="text" class="form-control" th:field="*{cardId}" id="cardid" value="" placeholder="Enter Name">
+                  </div>
+                  <div class="form-group col-lg-6 col-sm-12">
+                    <label for="exampleInputPassword1">Date</label>
+                    <input type="date" class="form-control" th:field="*{entryDate}" id="exampleInputPassword1" placeholder="Enter Date">
+                    <input type="hidden" class="form-control" th:field="*{custId}" id="custid22" placeholder="Enter Date">
+                  </div>
+                </div>
+                <div class="col-lg-12 col-sm-12 row">
+                  <div class="form-group col-lg-6 col-sm-12">
+                    <label for="exampleInputEmail1">No of Days</label>
+                    <input type="text" class="form-control" th:field="*{noOfDays}" id="exampleInputEmail1" placeholder="Enter No of Days">
+                  </div>
+                  <div class="form-group col-lg-6 col-sm-12">
+                    <label for="exampleInputPassword1">Amount</label>
+                    <input type="number" class="form-control" th:field="*{amount}" id="exampleInputEmail1" placeholder="Enter Amount">
+                  </div>
+                </div>
+                  
+              </div>
+              
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+            </form>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+
+<div class="modal fade" id="modal-sm">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Card 1</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div>No of Days : <b>10</b></div>
+              <div>Date : <b>12-01-2022</b></div>
+              <div class="col-12 row">
+                <div class="col-8" style="margin-left: -3%;">No of days completed : </div>
+                <input type="number" class="form-control col-4" value="5" name="" style="border: none; border-bottom: 1px solid;" />
+              </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+
+</body>
+</html>
