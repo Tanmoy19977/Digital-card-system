@@ -57,7 +57,14 @@ public class PocController {
 	public String saveCust(HttpServletRequest req, Model model)
 	{
 		List<card> cdsCards = null;
-		int id = 4;//Integer.parseInt(req.getParameter("id"));
+		//List<customer> custt = cRepository.findAll();
+		int iid = 1;
+		String names = "";
+		String ids = "";
+		List<customer> cust = cRepository.findAll();
+		iid = cust.size() + 1;
+		
+		int id = iid;//Integer.parseInt(req.getParameter("id"));
 		String name = req.getParameter("name");
 		String age = req.getParameter("age");
 		String sex = req.getParameter("sex");
@@ -69,14 +76,13 @@ public class PocController {
 		customer cus = new customer(id, name, age, sex, address, category, surgery, drName, visitType, cdsCards);
 		cRepository.save(cus);
 		model.addAttribute("message", "New Customer has been Successfully saved");
-		String names = "";
-		String ids = "";
-		List<customer> cust = cRepository.findAll();
-		Iterator iterator = cust.iterator();
-	      while(iterator.hasNext()) {
-	         customer tempCust = (customer) iterator.next();
+		List<customer> cust1 = cRepository.findAll();
+		Iterator iterator1 = cust1.iterator();
+	      while(iterator1.hasNext()) {
+	         customer tempCust = (customer) iterator1.next();
 	         ids += tempCust.getId()+"_";
 	         names += tempCust.getName()+"_";
+	         iid++;
 	      }
 	      System.out.println("names = "+names);
 	      model.addAttribute("names",names);
